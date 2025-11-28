@@ -20,3 +20,13 @@ print(media_com_lista(notas))
 subtracao_lambda  = lambda media_valor : media_valor -1
 
 print(subtracao_lambda(media(1,2,3)))
+
+#notas
+notas_1 = [1,1,2,3,46,78,1.2]
+qualitativo = 0.5
+
+notas_atualizadas = map(lambda x: x + qualitativo, notas_1)
+
+notas_atualizadas = list(notas_atualizadas)
+
+print(notas_atualizadas)
