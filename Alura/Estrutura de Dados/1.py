@@ -73,9 +73,3 @@ preco = 25*area
 
 print(f"\n Área total: {area:.4f} \n Preço total: {preco:.2f} \n")
 '''
-
-def media (nota1, nota2, nota3):
-    calculo = (nota1+nota2+nota3)/3
-    return calculo
-
-print (media(1,2,3))
