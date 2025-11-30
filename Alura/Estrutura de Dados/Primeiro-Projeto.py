@@ -7,7 +7,7 @@ from random import choice, randrange
 
 
 #Primeiro Passo
-'''
+
 estudantes = ["João", "Maria", "José"]
 estudantes_2 = ["João", "Maria", "José", "Ana"]
 
@@ -72,4 +72,4 @@ area = pi*pow(raio, 2)
 preco = 25*area
 
 print(f"\n Área total: {area:.4f} \n Preço total: {preco:.2f} \n")
-'''
+

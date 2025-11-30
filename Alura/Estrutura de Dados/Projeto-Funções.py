@@ -1,9 +1,8 @@
 #Projeto-Funções
 
+'''
 def media (nota1, nota2, nota3) -> float:
-    '''
         Cálculo de média
-    '''
     calculo = (nota1+nota2+nota3)/3
     return calculo
 
@@ -29,4 +28,18 @@ notas_atualizadas = map(lambda x: x + qualitativo, notas_1)
 
 notas_atualizadas = list(notas_atualizadas)
 
-print(notas_atualizadas)
+print(notas_atualizadas)'''
+
+#Exercícios
+
+#1
+lista = [16, 14, 63, 65, 17, 99, 70, 11, 20, 48, 79, 32, 17, 89, 12, 25, 66]
+
+lista_tamanho = len(lista)
+lista_somada = sum(lista)
+lista_maximo = max(lista)
+lista_minimo = min(lista)
+
+print(f"\nA lista possui {lista_tamanho} números\n em que o maior número é {lista_maximo} \n e o menor número é {lista_minimo}.\n A soma dos valores presentes nela é igual a {lista_somada}")
+
+#2
