@@ -91,20 +91,29 @@ print(f"\n {list(map(lambda lst: lst*lst, lista_quadrada))} \n")
 
 
 #5
-lista_nota_skate = [] 
+lista_nota_skate = [1, 2, 3] 
 
 def gerador_de_media_skate (lst: list = [0]) -> float:
-
-    if len(lst) == 0 : 
-        for i in range(len(lst)): lst.append(float(input(f"\n Digite a nota {i+1} do participante: ")))
-
-    if len(lst) >= 3:
-        lst.remove(max(lst))
-        lst.remove(min(lst))
+    match len(lst):
+        case 0:
+            for i in range(5): lst.append(float(input(f"\n Digite a nota {i+1} do participante: ")))
+            
+        case 1:
+            lst.append(min(lst)-1)
+            lst.append(max(lst)+1)
+            
+        case 2:
+            lst.append(min(lst)-1)
+            
+    lst.remove(max(lst))
+    lst.remove(min(lst))
 
     return sum(lst)/len(lst)
 
-resultado = gerador_de_media_skate(lista_nota_skate)
+resultado1 = gerador_de_media_skate(lista_nota_skate)
 
-print(f"\n Resultado final: {resultado:.2f} \n")
+#resultado2 = gerador_de_media_skate([30, 2.3, 78.76, 34.456, 98, 578])
 
+print(f"\n Resultado final: {resultado1:.2f} \n")
+
+#print(f"\n Resultado final: {resultado2:.2f} \n")
