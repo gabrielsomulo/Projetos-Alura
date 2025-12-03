@@ -89,7 +89,7 @@ lista_quadrada = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(f"\n {list(map(lambda lst: lst*lst, lista_quadrada))} \n")
 '''
 
-
+'''
 #5
 lista_nota_skate = [1, 2, 3] 
 
@@ -117,3 +117,32 @@ resultado1 = gerador_de_media_skate(lista_nota_skate)
 print(f"\n Resultado final: {resultado1:.2f} \n")
 
 #print(f"\n Resultado final: {resultado2:.2f} \n")
+'''
+
+#6
+lista_nota_escola = [6.5, 8.4, 5.4, 7.9]
+
+def resultados_de_notas(lst: list[float]) -> tuple[float, float, float, str]:
+    maior = max(lst)
+    menor = min(lst)
+    media = sum(lst)/len(lst)
+    avaliacao = "reprovado" if media < 7 else "aprovado"
+    return maior, menor, media, avaliacao
+
+maior, menor, media, avaliacao = resultados_de_notas(lista_nota_escola)
+
+print(f"O(a) estudante obteve uma média de {media}, com a sua maior nota de {maior} pontos e a menor nota de {menor} pontos e foi {avaliacao}")
+
+#7
+nomes = ["joão", "MaRia", "JOSÉ"]
+sobrenomes = ["SILVA", "souza", "Tavares"]
+
+def ajustar_nomes(lst_nome: list[str], lst_sobrenome: list[str]) -> list[str]:
+    nomes = list(map(lambda nome, sobrenome: nome.capitalize() + " " + sobrenome.capitalize(), lst_nome, lst_sobrenome))
+    return nomes
+
+lista_nomes_completos = ajustar_nomes(nomes, sobrenomes)
+
+for i in range(len(lista_nomes_completos)): print(f"\n Nome completo: {lista_nomes_completos[i]}")
+
+
