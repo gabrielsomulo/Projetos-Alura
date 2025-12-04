@@ -118,7 +118,7 @@ print(f"\n Resultado final: {resultado1:.2f} \n")
 
 #print(f"\n Resultado final: {resultado2:.2f} \n")
 '''
-
+'''
 #6
 lista_nota_escola = [6.5, 8.4, 5.4, 7.9]
 
@@ -145,4 +145,28 @@ lista_nomes_completos = ajustar_nomes(nomes, sobrenomes)
 
 for i in range(len(lista_nomes_completos)): print(f"\n Nome completo: {lista_nomes_completos[i]}")
 
+#8
+gols_marcados = [2, 1, 3, 1, 0]
+gols_sofridos = [1, 2, 2, 1, 3]
+
+def calcula_pontos(gols_marc: list=[0], gols_sofr: list=[0]) -> tuple[int, float]:
+    pontos = 0
+    pontos_maximos = len(gols_marc)*3
+
+    for i in range(len(gols_marcados)):
+        resultado = gols_marc[i] - gols_sofr[i]
+        if (resultado > 0):
+            pontos += 3
+        elif (resultado == 0):
+            pontos += 1
+    
+    aproveitamento = pontos/pontos_maximos
+
+    return pontos, aproveitamento
+
+pontos_final, aproveitamento_final = calcula_pontos(gols_marcados, gols_sofridos)
+
+print(f"A pontuação do time foi de {pontos_final} e seu aproveitamento foi de {(aproveitamento_final)*100:.2f}%")
+'''
+#9
 
