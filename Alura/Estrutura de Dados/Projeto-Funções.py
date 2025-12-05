@@ -169,4 +169,32 @@ pontos_final, aproveitamento_final = calcula_pontos(gols_marcados, gols_sofridos
 print(f"A pontuação do time foi de {pontos_final} e seu aproveitamento foi de {(aproveitamento_final)*100:.2f}%")
 '''
 #9
+diaria_hotel = 150
+distancia_litro = 14
+custo_litro = 5
+cidades = {"Salvador":[200, 850], "Fortaleza":[400,800], "Natal":[250, 300], "Aracaju":[300, 550]}
 
+def gasto_hotel(dias_host: int=[0]) -> float: 
+    return diaria_hotel*dias_host
+
+def gasto_gasolina(distancia: float=[0], distancia_p_litro: float=[0], custo_p_litro: float=[0]) -> float: 
+    return (distancia/distancia_p_litro)*custo_p_litro
+
+def gasto_passeio(dias_consumo: int=[0], consumo: float=[0]) -> float: 
+    return consumo*dias_consumo
+
+dias = int(input("\n Quantos dias de viagem ? \n "))
+
+cidade = str(input("\n Qual a cidade destino ? \n"))
+cidade = cidade.capitalize()
+
+gastos = 0
+
+gastos += gasto_hotel(dias)
+gastos += gasto_gasolina(cidades[cidade][1], distancia_litro, custo_litro)
+gastos += gasto_passeio(dias, cidades[cidade][0])
+
+
+print(f"\n Com base nos gastos definidos, uma viagem de {dias} dias para {cidade} saindo de Recife custaria {gastos:.2f} reais \n")
+
+#10
