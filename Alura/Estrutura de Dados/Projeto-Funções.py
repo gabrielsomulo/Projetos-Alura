@@ -86,7 +86,7 @@ print(f"\n {mult}")
 
 #4
 lista_quadrada = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(f"\n {list(map(lambda lst: lst*lst, lista_quadrada))} \n")
+print(f"\n {list(map(lambda lst: lst**2, lista_quadrada))} \n")
 '''
 
 '''
@@ -168,6 +168,8 @@ pontos_final, aproveitamento_final = calcula_pontos(gols_marcados, gols_sofridos
 
 print(f"A pontuação do time foi de {pontos_final} e seu aproveitamento foi de {(aproveitamento_final)*100:.2f}%")
 '''
+
+'''
 #9
 diaria_hotel = 150
 distancia_litro = 14
@@ -197,4 +199,19 @@ gastos += gasto_passeio(dias, cidades[cidade][0])
 
 print(f"\n Com base nos gastos definidos, uma viagem de {dias} dias para {cidade} saindo de Recife custaria {gastos:.2f} reais \n")
 
+'''
+
 #10
+frase = str(input("\n Digite a frase: \n"))
+
+def tirar_simbolos(str_frase: str) -> str:
+    return str_frase.replace('!', ' ').replace('?', ' ').replace('.', ' ').replace(',', ' ').replace(';', ' ').split(' ')
+
+separador_de_palavras = lambda palavra: len(palavra) >= 5
+
+#frase_ajustada = (tirar_simbolos(frase))
+
+print(list(filter(separador_de_palavras, tirar_simbolos(frase))))
+
+
+
