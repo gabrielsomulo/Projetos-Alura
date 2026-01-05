@@ -35,6 +35,7 @@ candidatos = [ estudante[0] for estudante in estudantes_dados if estudante[1] >=
 
 print(candidatos)
 '''
+'''
 
 lista_completa = [[('João', 'J720'), ('Maria', 'M205'), ('José', 'J371'), ('Cláudia', 'C546'), ('Ana', 'A347')],
                   [[8.0, 9.0, 10.0], [9.0, 7.0, 6.0], [3.4, 7.0, 7.0], [5.5, 6.6, 8.0], [6.0, 10.0, 9.5]],
@@ -50,3 +51,44 @@ print(cadastro)
 cadastro["Estudante"] = [lista_completa[0][i][0] for i in range(len(lista_completa[0]))]
 
 print(cadastro)
+'''
+
+#1
+lista_de_listas = [[4,6,5,9], [1,0,7,2], [3,4,1,8]]
+
+lista_somada =  [sum(lista_de_listas[i]) for i in range(len(lista_de_listas))]
+
+print(lista_somada)
+
+#2
+lista_de_tuplas = [('Pedro', 1.74, 81), ('Júlia', 1.65, 67), ('Otávio', 1.81, 83)]
+
+lista_terceiro_elemento = [lista_de_tuplas[i][2] for i in range(len(lista_de_tuplas))]
+
+print(lista_terceiro_elemento)
+
+
+#3
+lista = ['Pedro', 'Júlia', 'Otávio', 'Eduardo']
+
+lista_tuplas_nomes = [(i, lista[i]) for i in range(len(lista))]
+
+print(lista_tuplas_nomes)
+
+#4
+aluguel = [('Apartamento', 1700), ('Apartamento', 1400), ('Casa', 2150), ('Apartamento', 1900), ('Casa', 1100)]
+
+lista_aluguel_apartamento = [aluguel[i][1] for i in range(len(aluguel)) if aluguel[i][0] == 'Apartamento']
+
+print(lista_aluguel_apartamento)
+
+#5
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'] 
+
+despesa = [860, 490, 1010, 780, 900, 630, 590, 770, 620, 560, 840, 360]
+
+dicionario_despesas = {meses[i]: despesa[i] for i in range(len(meses))}
+
+dicionario_despesas_v2 = dict(zip(meses, despesa))
+
+print(dicionario_despesas_v2)
