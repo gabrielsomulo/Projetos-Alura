@@ -53,6 +53,7 @@ cadastro["Estudante"] = [lista_completa[0][i][0] for i in range(len(lista_comple
 print(cadastro)
 '''
 
+'''
 #1
 lista_de_listas = [[4,6,5,9], [1,0,7,2], [3,4,1,8]]
 
@@ -92,3 +93,41 @@ dicionario_despesas = {meses[i]: despesa[i] for i in range(len(meses))}
 dicionario_despesas_v2 = dict(zip(meses, despesa))
 
 print(dicionario_despesas_v2)
+
+#6
+vendas = [('2023', 4093), ('2021', 4320), ('2021', 5959), ('2022', 8883), ('2023', 9859), ('2022', 5141), ('2022', 7688), ('2022', 9544), ('2023', 4794), ('2021', 7178), ('2022', 3030), ('2021', 7471), ('2022', 4226), ('2022', 8190), ('2021', 9680), ('2022', 5616)]
+
+lista_maiores_vendas_2022 = [vendas[i] for i in range(len(vendas)) if vendas[i][0] == '2022' and vendas[i][1]>6000]
+
+print(lista_maiores_vendas_2022)
+'''
+
+#7 
+glicemia = [129, 82, 60, 97, 101, 65, 62, 167, 87, 53, 58, 92, 66, 120, 109, 62, 86, 96, 103, 88, 155, 52, 89, 73]
+
+glicose = [None]*len(glicemia)
+
+estado = ''
+for i in range(len(glicemia)):
+    if glicemia[i] <= 70:
+        estado = 'Hipoglicemia'
+
+    elif glicemia[i] >= 69 and glicemia[i] <= 99:
+        estado = 'Normal'
+
+    elif glicemia[i] >= 100 and glicemia[i] <= 125:
+        estado = 'Alterada'
+
+    else:
+        estado = 'Diabetes'
+        
+    glicose[i] = estado
+
+lista_resultados_glicemia = list(zip(glicemia, glicose))
+
+print(lista_resultados_glicemia)
+
+id = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+quantidade = [15, 12, 1, 15, 2, 11, 2, 12, 2, 4]
+preco = [93.0, 102.0, 18.0, 41.0, 122.0, 14.0, 71.0, 48.0, 14.0, 144.0]
+
