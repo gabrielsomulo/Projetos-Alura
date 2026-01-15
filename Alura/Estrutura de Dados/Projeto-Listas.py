@@ -102,6 +102,7 @@ lista_maiores_vendas_2022 = [vendas[i] for i in range(len(vendas)) if vendas[i][
 print(lista_maiores_vendas_2022)
 '''
 
+'''
 #7 
 glicemia = [129, 82, 60, 97, 101, 65, 62, 167, 87, 53, 58, 92, 66, 120, 109, 62, 86, 96, 103, 88, 155, 52, 89, 73]
 
@@ -126,8 +127,27 @@ for i in range(len(glicemia)):
 lista_resultados_glicemia = list(zip(glicemia, glicose))
 
 print(lista_resultados_glicemia)
+'''
+
+
+'''
+#8
 
 id = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 quantidade = [15, 12, 1, 15, 2, 11, 2, 12, 2, 4]
 preco = [93.0, 102.0, 18.0, 41.0, 122.0, 14.0, 71.0, 48.0, 14.0, 144.0]
+
+lista_dados_total = [(id[i], quantidade[i], preco[i], quantidade[i]*preco[i]) for i in range(len(id))]
+
+lista_dados_total.insert(0, ('Id', 'Quantidade', 'Preço', 'Total'))
+
+print(lista_dados_total)
+'''
+
+#9
+estados = ['SP', 'ES', 'MG', 'MG', 'SP', 'MG', 'ES', 'ES', 'ES', 'SP', 'SP', 'MG', 'ES', 'SP', 'RJ', 'MG', 'RJ', 'SP', 'MG', 'SP', 'ES', 'SP', 'MG']
+
+lista_estados_qtdd = []
+
+lista_estados = {}
 
