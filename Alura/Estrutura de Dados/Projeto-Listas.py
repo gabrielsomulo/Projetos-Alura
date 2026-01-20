@@ -147,7 +147,20 @@ print(lista_dados_total)
 #9
 estados = ['SP', 'ES', 'MG', 'MG', 'SP', 'MG', 'ES', 'ES', 'ES', 'SP', 'SP', 'MG', 'ES', 'SP', 'RJ', 'MG', 'RJ', 'SP', 'MG', 'SP', 'ES', 'SP', 'MG']
 
-lista_estados_qtdd = []
+lista_estados = ['SP', 'MG', 'RJ', 'ES']
 
-lista_estados = {}
+'''lista_estados_contagem = {lista_estados[i]: estados.count(lista_estados[i]) for i in range(len(lista_estados))}
+
+print(lista_estados_contagem)'''
+
+#10
+funcionarios = [('SP', 16), ('ES', 8), ('MG', 9), ('MG', 6), ('SP', 10), ('MG', 4), ('ES',9), ('ES', 7), ('ES', 12), ('SP', 7), ('SP', 11), ('MG',8), ('ES',8), ('SP',9), ('RJ', 13), ('MG', 5), ('RJ', 9), ('SP', 12), ('MG', 10), ('SP', 7), ('ES', 14), ('SP', 10), ('MG', 12)]
+
+dicionario_funcionarios = {lista_estados[i]: [funcionarios[j][1] for j in range(len(funcionarios)) if funcionarios[j][0]==lista_estados[i]] for i in range(len(lista_estados))}
+
+print(dicionario_funcionarios)
+
+dicionarios_funcionarios_soma = {lista_estados[i]: sum(dicionario_funcionarios[lista_estados[i]]) for i in range(len(lista_estados))}
+
+print(dicionarios_funcionarios_soma)
 
