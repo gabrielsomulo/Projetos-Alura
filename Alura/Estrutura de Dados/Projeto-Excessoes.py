@@ -21,7 +21,7 @@ def media(lista: list=[0]) -> float:
         Lista com as notas para calcular a média
         return calculo: float
         Média calculada
-    '''
+
     try:
         calculo = sum(lista) / len(lista)
 
@@ -50,3 +50,76 @@ numeros3 = [1,2,3]
 print(media(numeros1))
 print(media(numeros2))
 print(media(numeros3))
+
+#1
+try:
+    valor1 = float(input("Insira o valor 1: "))
+    valor2 = float(input("Insira o valor 2: "))
+
+    try:
+      print(valor1/valor2)
+    except ZeroDivisionError as e:
+        print(f"Erro - {e}")
+
+except ValueError as e:
+    print(f"Erro - {e}")
+
+#2
+idades = {'Júlia': 16, 'Carol': 23, 'Alberto': 19, 'Roberta': 17}
+
+nome = str(input("Insira o nome desejado: "))
+
+try:
+    nome_buscado = idades[nome]
+    print(nome_buscado)
+except KeyError:
+    print("Nome não achado")
+
+
+#3
+def conversor_float(lista_int = list[0]) -> list:
+    try:
+        lista_convertida = [float(lista_int[i]) for i in range(len(lista_int))]
+        
+        return lista_convertida
+
+    except TypeError:
+        print("\n A variável precisa ser uma lista de inteiros. \n")
+
+    except ValueError:
+        print("\n Os valores dentro da lista precisam inteiros ou floats. \n")
+
+    finally:
+        print("\n Fim da execução da função. \n")
+
+print(conversor_float([3, 1, 2]))
+
+
+#4
+def misturar_listas(lista_1 = list[0], lista_2 = list[0]) -> list:
+    try:
+        if(len(lista_1) != len(lista_2)):
+            raise IndexError
+
+        lista_misturada = list(zip(lista_1, lista_2))
+
+        try:
+            lista_soma = [(lista_misturada[i][0], lista_misturada[i][1], lista_misturada[i][0]+lista_misturada[i][1]) for i in range(len(lista_misturada))]
+
+            return lista_soma
+        
+        except TypeError:
+            print('As listas devem conter apenas valores inteiros.')
+
+    except IndexError:
+        print('A quantidade de elementos em cada lista é diferente.')
+
+
+lista1 = [4,6,7,9,'A']
+lista2 = [-4,'E',8,7,9]
+
+lista_misturada_soma = misturar_listas(lista1, lista2)
+
+print(lista_misturada_soma)
+'''
+
