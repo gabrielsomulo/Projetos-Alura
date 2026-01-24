@@ -123,3 +123,22 @@ lista_misturada_soma = misturar_listas(lista1, lista2)
 print(lista_misturada_soma)
 '''
 
+#5
+gabarito = ['D', 'A', 'B', 'C', 'A']
+
+def gerar_nota(lista_alunos = list[0]) -> list:
+    try:
+        lista_notas 
+
+        for i in range(len(lista_alunos)):
+            if(len(lista_alunos[i]!=len(gabarito))): raise IndexError
+            
+            for j in range(len(gabarito)):
+                if (lista_alunos[i][j] not in gabarito): raise ValueError
+
+                if (lista_alunos[i][j]==gabarito[j]): 
+
+    except IndexError:
+
+    
+    except ValueError:
