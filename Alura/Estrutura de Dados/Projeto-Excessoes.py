@@ -233,12 +233,12 @@ def divide_colunas(lista_pressao = list[0], lista_temperatura = list[0]) -> list
         return None
 
     except ZeroDivisionError:
-        print(f"A lista de temperatura contêm valores iguais a zero na(s) posição(ões): ")
+        print(f"A lista de temperatura contêm valores iguais a zero no(s) índice(s): ")
 
         return posicoes_t
 
 pressoes = [60, 120, 140, 0, 180]
 
-temperaturas = [1, 5, 30, 35, 12]
+temperaturas = [1, 0, 30, 35, 0]
 
 print(divide_colunas(pressoes, temperaturas))
