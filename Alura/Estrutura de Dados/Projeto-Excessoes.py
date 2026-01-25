@@ -166,7 +166,6 @@ testes_com_erro = [['A','D', 'A', 'B', 'C', 'A'], ['C', 'A', 'A', 'E', 'A'], ['D
 
 print(gerar_nota(testes_com_erro))
 
-'''
 
 #6
 pontuacoes = [',', ';', '!', '?']
@@ -183,7 +182,7 @@ lista_nao_tratada = ['Python', 'é', 'uma', 'linguagem', 'de', 'programação', 
 
 def leitor_de_palavras(lista_palavras = list[0]) -> bool:
     achou = False
-    
+
     try:
         for i in range(len(lista_palavras)):
             for j in range(len(lista_palavras[i])):
@@ -201,4 +200,45 @@ def leitor_de_palavras(lista_palavras = list[0]) -> bool:
          return False
 
 print(leitor_de_palavras(lista_tratada))
+'''
 
+#7
+posicoes_t = []
+
+def divide_colunas(lista_pressao = list[0], lista_temperatura = list[0]) -> list:
+    achou_zero = False
+    lista_completa = []
+    try:
+        if(len(lista_pressao)!=len(lista_temperatura)): raise IndexError
+
+        for i in range(len(lista_pressao)):
+
+            if(lista_temperatura[i]==0):
+                posicoes_t.append(i+1)
+                achou_zero = True
+
+            else:
+                pressao = lista_pressao[i]
+                temperatura = lista_temperatura[i]
+
+                lista_completa.append((pressao, temperatura, pressao/temperatura))
+
+        if (achou_zero): raise ZeroDivisionError
+
+        return lista_completa
+    
+    except IndexError:
+        print("As listas contêm tamanhos diferentes")
+        
+        return None
+
+    except ZeroDivisionError:
+        print(f"A lista de temperatura contêm valores iguais a zero na(s) posição(ões): ")
+
+        return posicoes_t
+
+pressoes = [60, 120, 140, 0, 180]
+
+temperaturas = [1, 5, 30, 35, 12]
+
+print(divide_colunas(pressoes, temperaturas))
