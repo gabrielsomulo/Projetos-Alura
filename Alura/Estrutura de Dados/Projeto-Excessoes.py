@@ -121,24 +121,84 @@ lista2 = [-4,'E',8,7,9]
 lista_misturada_soma = misturar_listas(lista1, lista2)
 
 print(lista_misturada_soma)
-'''
+
 
 #5
 gabarito = ['D', 'A', 'B', 'C', 'A']
 
 def gerar_nota(lista_alunos = list[0]) -> list:
     try:
-        lista_notas 
+        alternativa = ''
+        lista_notas = [0]*len(lista_alunos)
 
         for i in range(len(lista_alunos)):
-            if(len(lista_alunos[i]!=len(gabarito))): raise IndexError
-            
+            if(len(lista_alunos[i])!=len(gabarito)): 
+                raise IndexError
+    
             for j in range(len(gabarito)):
-                if (lista_alunos[i][j] not in gabarito): raise ValueError
+            
+                if (lista_alunos[i][j] not in gabarito): 
+                    alternativa = lista_alunos[i][j]
+                    raise ValueError
 
-                if (lista_alunos[i][j]==gabarito[j]): 
-
+                if (lista_alunos[i][j]==gabarito[j]):
+                    lista_notas[i] += 1
+    
     except IndexError:
+         print("Quantidade de respostas não condizentes com a quantidade do gabarito")
 
+         return None
     
     except ValueError:
+        print(f"A alternativa {alternativa} não é uma opção de alternativa válida")
+
+        return None
+
+    else:
+        return lista_notas
+
+
+testes_sem_ex = [['D', 'A', 'B', 'C', 'A'], ['C', 'A', 'A', 'C', 'A'], ['D', 'B', 'A', 'C', 'A']]
+
+testes_com_ex = [['D', 'A', 'B', 'C', 'A'], ['C', 'A', 'A', 'E', 'A'], ['D', 'B', 'A', 'C', 'A']]
+
+testes_com_erro = [['A','D', 'A', 'B', 'C', 'A'], ['C', 'A', 'A', 'E', 'A'], ['D', 'B', 'A', 'C', 'A']]
+
+print(gerar_nota(testes_com_erro))
+
+'''
+
+#6
+pontuacoes = [',', ';', '!', '?']
+
+palavras = []
+
+lista_tratada = ['Python', 'é', 'uma', 'linguagem', 'de', 'programação', 'poderosa', 'versátil',
+                  'e', 'fácil', 'de', 'aprender', 'utilizada', 'em', 'diversos', 'campos', 'desde',
+                  'análise', 'de', 'dados', 'até', 'inteligência', 'artificial']
+
+lista_nao_tratada = ['Python', 'é', 'uma', 'linguagem', 'de', 'programação', 'poderosa,', 'versátil',
+                  'e', 'fácil,', 'de', 'aprender', 'utilizada', 'em', 'diversos', 'campos,', 'desde',
+                  'análise', 'de', 'dados', 'até', 'inteligência', 'artificial!']
+
+def leitor_de_palavras(lista_palavras = list[0]) -> bool:
+    achou = False
+    
+    try:
+        for i in range(len(lista_palavras)):
+            for j in range(len(lista_palavras[i])):
+                if (lista_palavras[i][j] in pontuacoes): 
+                    palavras.append(lista_palavras[i])
+                    achou = True
+            
+        if (achou): raise ValueError
+        
+        return True
+    
+    except ValueError:
+         print(f"O texto apresenta pontuações na(s) palavra(s) \"{palavras}\".")
+
+         return False
+
+print(leitor_de_palavras(lista_tratada))
+
