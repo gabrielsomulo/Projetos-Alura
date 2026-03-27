@@ -1,0 +1,11 @@
+index,País,ISO 3166-1 alpha-3,Ano
+0,Afeganistão,AFG,1750
+1,Afeganistão,AFG,1751
+2,Afeganistão,AFG,1752
+3,Afeganistão,AFG,1753
+4,Afeganistão,AFG,1754
+5,Afeganistão,AFG,1755
+6,Afeganistão,AFG,1756
+7,Afeganistão,AFG,1757
+8,Afeganistão,AFG,1758
+9,Afeganistão,AFG,1759
